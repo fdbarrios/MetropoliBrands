@@ -40,6 +40,12 @@ border: 1px solid #273b47;
 border-collapse: collapse;
 }
 
+.background {
+  background-image: url('../images/backgroundMbMb.png');
+  background-size: cover;
+}
+
+
 .button {
 	border-radius: 10px;
 	border: none;
@@ -77,8 +83,8 @@ border-collapse: collapse;
 }
 
 .portada{
-	background-image: url("../images/backgroundMb.png");
-	/*background-size: 100%; */
+	/*background-image: url("../images/backgroundMb.png");*/
+	/*backgr und-size: 100%; */
 	color: white;
 	padding: 20px;
 	height: 500 px;
