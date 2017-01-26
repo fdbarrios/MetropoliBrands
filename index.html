@@ -4,49 +4,52 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/Mbrands.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates|Roboto:400,700" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=No"/>
 	<title>Viste a la moda al mejor precio la mejor ropa</title>
 </head>
 <body>
- 	<section id="portada" class="portada background"><!-- portada -->
-	<header id="header" class="header contenedor"><!-- header -->
+ 	<header id="header" class="header contenedor"><!-- header -->
 		<figure class="logotipo"> <!-- logotipo -->
-			<img src="images/Mb.png" width="120" height="130" alt="Mb logotipo" />
-		</figure >
-		
-		<nav class="menu"> <!-- menu -->
+			<img src="images/Mb.png" width="120" height="150" alt="Invie logotipo" />
+		</figure >	
+		<span id="burger-button" class="burger-button icon-menu"></span>					
+		<nav class="menu" id="menu"> <!-- menu -->
 			<ul>
 				<li>
 					<a href="index.html">Inicio</a>
 				</li>
 				<li>
-					<a href="#guitarras">Catálogo</a>
+					<a href="index.html#guitarras">Catálogo</a>
 				</li>
 				<li>
-					<a href="precios.html">Precios</a>
+					<a href="Precios.html">Precios</a>
 				</li>
 			</ul>			
 		</nav>
 	</header>
+	<section id="portada" class="portada"><!-- portada -->
 		<div class="contenedor">		
 			<h1 class="titulo">Todas la marcas los mejores precios </h1> <!-- titulo -->
 			<h3 class="titulo-a">Viste bien al mejor precio</h3><!-- resumen -->
-			<button class="button">Conoce más</button><!-- boton -->
+			<a href="#guitarras" class="button">Conoce más</a> <!-- boton -->
 		</div>
 	</section>	
 	<section id="guitarras" class="guitarras contenedor"><!-- guitarras -->
-		<h2>Nuestras marcas de mas priebas dq ljkjd</h2><!-- titulo -->
+		<h2>Nuestras marcas </h2><!-- titulo -->
 		<article class="guitarra"> <!-- guitarra1 -->
-			<img class="derecha" src="images/invie-acustica.png" width="300" alt="Guitarra acustica">
+			<img class="derecha" src="images/invie-acustica.png" alt="Guitarra acustica" width="350">
+			<div class="contenedor-guitarra-a">
 			<h3 class="titulo-b">Quick Silver</h3>
 			<ol>
 				<li>Ropa deportiva para toda ocasion</li>
 				<li>los mejores conceptos</li>
 				<li>Utilizala para toda la familia</li>
-			</ol>
+			</ol>				
+			</div>
 		</article> 
-		<article class="guitarra"> <!-- guitarra2 -->
-			<img class="izquierda" src="images/invie-classic.png" height="200"  alt="Invie clasica">
-			<div class="articulo">
+		<article class="guitarra b"> <!-- guitarra2 -->
+			<img class="izquierda" data-src="images/invie-classic.png" alt="Invie clasica" width="350">
+			<div class="contenedor-guitarra-b">
 				<h3 class="titulo-b">DC Roxie</h3>
 				<ol>
 					<li>Ropa Casual para el y ella</li>
@@ -59,7 +62,7 @@
 	<footer class="footer">
 		<div class="contenedor">
 			<div class="contacto">
-				<img src="images/invie-white.png" alt="logotipo blanco">
+				<img data-src="images/invie-white.png" alt="logotipo blanco">
 				<a href="tel:+477226005177"><strong>Teléfono</strong><span>30245567</span></a>
 				<a href="mailto:ventas@metropol.com"><strong>E-mail</strong><span>ventas@metrop.com</span></a>
 			</div>
@@ -100,5 +103,32 @@
 			</form>
 		</div>
 	</footer>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"></script>
+	<script type="text/javascript">
+		var consulta = window.matchMedia('(max-width: 500px)');
+		 consulta.addListener(mediaQuery);
+
+		var	$burgerButton = document.getElementById('burger-button');
+		var	$menu = document.getElementById('menu');
+			
+			function toggleMenu(){
+				$menu.classList.toggle('active')	
+			};
+		 
+		 function mediaQuery() {
+		if	(consulta.matches) {
+			$burgerButton.addEventListener('touchstart', toggleMenu); 
+			console.log('se cumplio la condicion');
+		}else{
+			$burgerButton.removeEventListener('touchstart', toggleMenu); 
+			console.log('no se cumplio la condicion');
+			}
+		 }
+		mediaQuery();
+		var bLazy = new Blazy({
+			selector: 'img'
+		});
+        
+	</script>
 </body>
 </html>	
